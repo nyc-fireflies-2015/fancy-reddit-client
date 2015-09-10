@@ -5,7 +5,9 @@
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.2/handlebars.js"></script>
   <script type="text/javascript" src="app.js"></script>
-  
+  <style>
+  img{max-width: 200px; max-height: 200px}
+  </style>
 </head>
 <body>
 <h1>Fancy Reddit Clone</h1>
@@ -19,10 +21,13 @@
 <div id="posts">
 
   {{#each posts}}
-  
-  <p><a href="https://www.reddit.com{{data.permalink}}">{{data.title}}</a><p>
-  <a href="https://www.reddit.com/r/{{data.subreddit}}/">subreddit: {{data.subreddit}}</a>
+  <h3>{{data.title}}</h3>
+  <p><a 
+  href="https://www.reddit.com{{data.permalink}}">Page on reddit</a> <a 
+  href="https://www.reddit.com{{data.permalink}}">Original</a>
+  <a href="https://www.reddit.com/r/{{data.subreddit}}/">subreddit {{data.subreddit}}</a>
    {{data.num_comments}} comments
+   </p>
   <div>
     {{#each data.preview.images}}
       <img src="{{source.url}}">
