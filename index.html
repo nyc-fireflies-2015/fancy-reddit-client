@@ -6,7 +6,10 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.2/handlebars.js"></script>
   <script type="text/javascript" src="app.js"></script>
   <style>
-  img{max-width: 200px; max-height: 200px}
+  body{font-family: helvetica, arial, sans-serif;}
+  img{max-width: 200px; max-height: 200px;}
+  div.post{border-top: 1px solid gray; margin-bottom:10px 0; padding-bottom: 10px;}
+
   </style>
 </head>
 <body>
@@ -18,9 +21,9 @@
 
 <script id="posts_template" type="text/x-handlebars-template">
 
-<div id="posts">
 
   {{#each posts}}
+  <div class="post">
   <h3>{{data.title}}</h3>
   <p><a 
   href="https://www.reddit.com{{data.permalink}}">Page on reddit</a> <a 
@@ -33,10 +36,10 @@
       <img src="{{source.url}}">
     {{/each}}
   </div>
+  </div>
   
   {{/each}}
 
-</div>
 </script>
 
 </body>
